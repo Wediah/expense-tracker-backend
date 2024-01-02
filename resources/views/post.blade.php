@@ -5,6 +5,6 @@
     <title>test</title>
 </head>
 <body>
-<h1>Welcome to 2024</h1>
+<h1>{{ $post }}</h1>
 </body>
 </html>

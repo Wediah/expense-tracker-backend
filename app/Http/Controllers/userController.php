@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 
 class userController extends Controller
 {
-    public function show(): string
+    public function show($post): string
     {
-        return 'hello';
+        $posts = [
+            'my-first-post' => 'Hello, this is my first blog post',
+            'my-second-post' => "I'm now getting started"
+        ];
+
+        if (! array_key_exists($post, $posts)) {
+            abort(404, 'Sorry, that post was not found');
+        }
+
+        return view('post', [
+            'post' => $posts[$post]
+        ]);
     }
 }

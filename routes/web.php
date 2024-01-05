@@ -23,7 +23,13 @@ Route::get('test', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        'articles' => App\Models\Article::latest()->get()
+    ]);
 });
 
 Route::get('/posts/{post}', [UserController::class, 'show']);
+
+Route::get('/articles/{article}', [\App\Http\Controllers\ArticlesController::class, 'show']);
+
+Route::get('/articles',[])

@@ -32,4 +32,4 @@ Route::get('/posts/{post}', [UserController::class, 'show']);
 
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticlesController::class, 'show']);
 
-Route::get('/articles',[])
+Route::get('/articles',[\App\Http\Controllers\ArticlesController::class, "action"]);

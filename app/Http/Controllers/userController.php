@@ -1,24 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Post;
+
+use Illuminate\Support\Facades\DB;
 
 class userController extends Controller
 {
-    public function show($post): string
+    public function show($slug): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $posts = [
-            'my-first-post' => 'Hello, this is my first blog post',
-            'my-second-post' => "I'm now getting started"
-        ];
-
-        if (! array_key_exists($post, $posts)) {
-            abort(404, 'Sorry, that post was not found');
-        }
-
         return view('post', [
-            'post' => $posts[$post]
+            'post' => Post::where('slug', $slug)->firstorFail()
         ]);
     }
 }

@@ -10,6 +10,7 @@
     <link href="/css/default.css" rel="stylesheet">
     <link href="/css/fonts.css" rel="stylesheet"><!--[if IE 6]>
     <link href="/public/css/default.css" rel="stylesheet"  />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <![endif]-->
 </head>
 <body>

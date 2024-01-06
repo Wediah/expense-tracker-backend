@@ -23,14 +23,7 @@
                 <li class="{{ Request::path() === 'contact' ? 'current_page_item' : '' }}"><a href="#">Contact</a></li>
             </ul></div>
         <!-- end #menu -->
-        <div id="header-wrapper">
-            <div id="header" class="container">
-                <div id="logo">
-                    <h1><a href="#">GrassyGreen</a></h1>
 
-                </div>
-            </div>
-        </div>
     </div>
 
     @yield('header-featured')

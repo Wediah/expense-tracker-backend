@@ -18,8 +18,8 @@
         <div id="menu" class="container">
             <ul><li class="{{ Request::path() === '/' ? 'current_page_item' : '' }}"><a href="#">Homepage</a></li>
                 <li class="{{ Request::path() === 'about' ? 'current_page_item' : '' }}"><a href="/about">About</a></li>
-                <li class="{{ Request::path() === 'article' ? 'current_page_item' : '' }}"><a href="/article">Blog</a></li>
-                <li class="{{ Request::path() === 'portfolio' ? 'current_page_item' : '' }}"><a href="/articles">Portfolio</a></li>
+                <li class="{{ Request::path() === 'article' ? 'current_page_item' : '' }}"><a href="/articles">Articles</a></li>
+                <li class="{{ Request::path() === 'portfolio' ? 'current_page_item' : '' }}"><a href="#">Portfolio</a></li>
                 <li class="{{ Request::path() === 'contact' ? 'current_page_item' : '' }}"><a href="#">Contact</a></li>
             </ul></div>
         <!-- end #menu -->

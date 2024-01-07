@@ -28,6 +28,6 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        
+
     }
 }

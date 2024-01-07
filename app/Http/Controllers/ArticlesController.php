@@ -26,8 +26,10 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+        $input = $request->all();
+        Article::created($input);
+        return redirect('articles')->with('flash_message', 'article added');
     }
 }

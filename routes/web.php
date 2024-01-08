@@ -36,4 +36,6 @@ Route::get('/articles/{article}', [\App\Http\Controllers\ArticlesController::cla
 
 Route::get('/articles',[\App\Http\Controllers\ArticlesController::class, 'index']);
 
-Route::post('/articles', [\App\Http\Controllers\ArticlesController::class, 'post']);
+Route::post('/articles', [\App\Http\Controllers\ArticlesController::class, 'store']);
+
+

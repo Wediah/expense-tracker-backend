@@ -48,7 +48,7 @@ class ArticlesController extends Controller
 
     public function edit($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
 
         return view('articles.edit', compact('article'));
     }
@@ -61,7 +61,7 @@ class ArticlesController extends Controller
             'body' => 'required',
         ]);
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
 
         $article->title = request('title');
         $article->excerpt = request('excerpt');

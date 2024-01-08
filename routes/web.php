@@ -39,3 +39,5 @@ Route::get('/articles',[\App\Http\Controllers\ArticlesController::class, 'index'
 Route::post('/articles', [\App\Http\Controllers\ArticlesController::class, 'store']);
 
 Route::get('/articles/{article}/edit', [\App\Http\Controllers\ArticlesController::class, 'edit']);
+
+Route::put('articles/{article}', [\App\Http\Controllers\ArticlesController::class, 'update']);

@@ -7,10 +7,8 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles.show', ['article' => $article]);
     }
 
@@ -29,45 +27,27 @@ class ArticlesController extends Controller
     public function store()
     {
 
-        request()->validate([
+        Article::create(request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required',
-        ]);
-
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        ]));
 
         return redirect('/articles');
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::findOrFail($id);
-
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
-        request()->validate([
+        $article->update(request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required',
-        ]);
-
-        $article = Article::findOrFail($id);
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        ]));
 
         return redirect('/articles/' . $article->id);
     }

@@ -69,8 +69,5 @@
     </div>
 </div>
 
-<div id="copyright" class="container">
-    <p>Powered by: <a href="https://templated.co/">TEMPLATED</a></p>
-</div>
 </body>
 </html>

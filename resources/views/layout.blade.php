@@ -37,13 +37,15 @@
             <div class="title">
                 <h2>Latest Post</h2>
             </div>
-            <ul class="style1"><li><a href="#">Semper mod quis eget mi dolore</a></li>
-                <li><a href="#">Quam turpis feugiat sit dolor</a></li>
-                <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-                <li><a href="#">Consequat etiam lorem phasellus</a></li>
-                <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-                <li><a href="#">Semper mod quisturpis nisi</a></li>
-            </ul></div>
+            <ul class="style1">
+                <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }}"><a href="#">Homepage</a></li>
+                    <li class="{{ Request::path() === 'about' ? 'current_page_item' : '' }}"><a href="/about">About</a></li>
+                    <li class="{{ Request::path() === 'article' ? 'current_page_item' : '' }}"><a href="/articles">Articles</a></li>
+                    <li class="{{ Request::path() === 'portfolio' ? 'current_page_item' : '' }}"><a href="#">Portfolio</a></li>
+                    <li class="{{ Request::path() === 'contact' ? 'current_page_item' : '' }}"><a href="#">Contact</a></li>
+
+            </ul>
+        </div>
         <div id="box3">
             <div class="title">
                 <h2>Follow Us</h2>
